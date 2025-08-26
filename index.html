@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +76,20 @@
             outline: none;
         }
         
-        .tab-btn:hover {
+        .tab-link {
+            background: #34495e;
+            color: #ecf0f1;
+            padding: 15px 10px;
+            flex-grow: 1;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-height: 48px;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .tab-btn:hover, .tab-link:hover {
             background-color: #4a6491;
         }
         
@@ -205,7 +219,7 @@
         
         <div class="tabs" role="tablist">
             <button class="tab-btn active" data-tab="intro" role="tab" aria-selected="true" aria-controls="intro">Introduction</button>
-            <button class="tab-btn" data-tab="text1" role="tab" aria-selected="false" aria-controls="text1">Text 1 Review</button>
+            <a href="https://oeybers-cpu.github.io/demo1_a/" class="tab-link" target="_blank" rel="noopener">Text 1 Review</a>
             <button class="tab-btn" data-tab="text2" role="tab" aria-selected="false" aria-controls="text2">Text 2 Review</button>
             <button class="tab-btn" data-tab="text3" role="tab" aria-selected="false" aria-controls="text3">Text 3 Review</button>
             <button class="tab-btn" data-tab="synthesis" role="tab" aria-selected="false" aria-controls="synthesis">Synthesis</button>
@@ -227,26 +241,6 @@
                 <li>Highlight gaps in current research and suggest future directions</li>
                 <li>Demonstrate the interdisciplinary nature of SCL</li>
             </ul>
-        </div>
-        
-        <div id="text1" class="content" role="tabpanel" aria-labelledby="text1">
-            <h2>Review: Bucholtz and Hall (2005)</h2>
-            <h3>Identity and Interaction: A Sociocultural Linguistic Approach</h3>
-            <p>Bucholtz and Hall's (2005) seminal work, "Identity and Interaction: A Sociocultural Linguistic Approach," provides a foundational theoretical framework for understanding how language and identity are mutually constituted in social interaction. This article is pivotal in establishing Sociocultural Linguistics as a distinct interdisciplinary field that bridges linguistic analysis with sociocultural theory.</p>
-            
-            <p>The authors develop a comprehensive approach that positions identity as socially constructed, emergent, and interactionally achieved rather than as a fixed attribute of individuals. Their framework identifies four key principles that define sociocultural linguistic analysis: <em>decentring</em> (moving beyond the individual as the primary unit of analysis), <em>embedding</em> (recognizing the contextual nature of linguistic practices), <em>indexicality</em> (understanding how linguistic features point to social meanings), and <em>articulation</em> (examining how different aspects of identity intersect). This theoretical contribution is crucial because it moves beyond essentialist views of identity and demonstrates how language both reflects and constitutes social reality (Bucholtz & Hall, 2005).</p>
-            
-            <p>Building on these principles, Bucholtz and Hall (2005) argue that linguistic practices are central to the social construction of identity categories such as race, gender, class, and sexuality. Their work establishes SCL as a field that examines "how identity is enacted through discourse" (p. 585), foregrounding the dynamic, contextual, and relational nature of both language and identity. This perspective has been instrumental in shifting the focus from language as a static system to language as a social practice embedded in power relations and cultural contexts.</p>
-            
-            <h3>Connection to Conceptual Framework</h3>
-            <p>This work forms the bedrock of the discourse analysis component of our conceptual framework, particularly through its emphasis on:</p>
-            <ul>
-                <li>Micro-level analysis of conversational patterns as identity work</li>
-                <li>The role of power dynamics in discourse and identity construction</li>
-                <li>Intersectional approaches to identity formation through language</li>
-                <li>Contextual factors shaping linguistic choices and their social interpretation</li>
-            </ul>
-            <p>By providing this theoretical foundation, Bucholtz and Hall (2005) enable researchers to move beyond merely describing linguistic features to analyzing how those features function as resources for social action and identity construction in specific cultural contexts.</p>
         </div>
         
         <div id="text2" class="content" role="tabpanel" aria-labelledby="text2">
@@ -377,7 +371,7 @@
             }
             
             // Remove active class from all buttons and update ARIA attributes
-            var buttons = document.getElementsByClassName('tab-btn');
+            var buttons = document.querySelectorAll('.tab-btn');
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].classList.remove('active');
                 buttons[i].setAttribute('aria-selected', 'false');
@@ -386,8 +380,10 @@
             // Show the specific tab content and set button as active
             document.getElementById(tabName).classList.add('active');
             var activeButton = document.querySelector(`[data-tab="${tabName}"]`);
-            activeButton.classList.add('active');
-            activeButton.setAttribute('aria-selected', 'true');
+            if (activeButton) {
+                activeButton.classList.add('active');
+                activeButton.setAttribute('aria-selected', 'true');
+            }
         }
 
         // Initialize tab functionality with event delegation
@@ -396,6 +392,11 @@
             
             tabsContainer.addEventListener('click', function(e) {
                 var target = e.target;
+                // Skip handling clicks on the Text 1 Review link since it's an external link
+                if (target.classList.contains('tab-link')) {
+                    return;
+                }
+                
                 if (target.classList.contains('tab-btn')) {
                     var tabName = target.getAttribute('data-tab');
                     openTab(tabName);
@@ -420,3 +421,4 @@
     </script>
 </body>
 </html>
+```
