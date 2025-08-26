@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sociocultural Linguistics Literature Review</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .note {
+            background-color: #ffeaa7;
+            padding: 15px;
+            border-radius: 6px;
+            margin: 20px 0;
+            border-left: 4px solid #fdcb6e;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #2c3e50;
+            border-radius: 6px 6px 0 0;
+            overflow: hidden;
+        }
+        
+        .tab-btn {
+            background: #34495e;
+            border: none;
+            color: #ecf0f1;
+            padding: 15px 20px;
+            cursor: pointer;
+            flex-grow: 1;
+            text-align: center;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-btn:hover {
+            background-color: #4a6491;
+        }
+        
+        .tab-btn.active {
+            background-color: #1a2530;
+            border-bottom: 3px solid #3498db;
+        }
+        
+        .content {
+            display: none;
+            padding: 30px;
+            background: white;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            min-height: 400px;
+        }
+        
+        .content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin: 20px 0 10px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .reference {
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #f8f9fa;
+            border-left: 3px solid #3498db;
+        }
+        
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .image-card {
+            flex: 1;
+            min-width: 300px;
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .image-placeholder {
+            height: 200px;
+            background: linear-gradient(45deg, #74b9ff, #0984e3);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .prompt-box {
+            background-color: #dfe6e9;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-style: italic;
+        }
+        
+        .annotation {
+            background-color: #ffeaa7;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .image-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sociocultural Linguistics Literature Review</h1>
+            <p>Examining Key Theoretical Frameworks in Language and Society</p>
+        </header>
+        
+        <div class="note">
+            <strong>Demo Note:</strong> This demo uses reduced text for illustration purposes. Students must adhere to the required word limit in actual submissions.
+        </div>
+        
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('intro')">Introduction</button>
+            <button class="tab-btn" onclick="openTab('text1')">Text 1 Review</button>
+            <button class="tab-btn" onclick="openTab('text2')">Text 2 Review</button>
+            <button class="tab-btn" onclick="openTab('text3')">Text 3 Review</button>
+            <button class="tab-btn" onclick="openTab('synthesis')">Synthesis</button>
+            <button class="tab-btn" onclick="openTab('references')">References</button>
+            <button class="tab-btn" onclick="openTab('visuals')">Visual Components</button>
+        </div>
+        
+        <div id="intro" class="content active">
+            <h2>Introduction to Sociocultural Linguistics</h2>
+            <p>Sociocultural Linguistics (SCL) represents an interdisciplinary field that examines the intricate relationships between language, culture, and society. This literature review explores three seminal works that have shaped the theoretical foundations of SCL, analyzing their contributions to understanding how language functions as a social practice.</p>
+            
+            <p>The selected texts represent diverse perspectives within SCL, including discourse analysis, variationalist sociolinguistics, and the sociology of language. By critically examining these works, this review aims to demonstrate how SCL has evolved as a field that bridges micro-level linguistic analysis with macro-level social theory.</p>
+            
+            <h3>Objectives</h3>
+            <p>This literature review seeks to:</p>
+            <ul>
+                <li>Analyze key theoretical contributions to Sociocultural Linguistics</li>
+                <li>Identify connections between different methodological approaches</li>
+                <li>Highlight gaps in current research and suggest future directions</li>
+                <li>Demonstrate the interdisciplinary nature of SCL</li>
+            </ul>
+        </div>
+        
+        <div id="text1" class="content">
+            <h2>Review: Smith & Gumede (2025)</h2>
+            <h3>Discourse and Social Identity</h3>
+            <p>Smith and Gumede's (2025) groundbreaking work, "Discourse and Social Identity," presents a comprehensive framework for analyzing how language constructs and reflects social identities. The authors argue that identity is not merely expressed through language but is actively constituted in discourse practices.</p>
+            
+            <p>Their theoretical contribution lies in the development of the "Dialogic Identity Framework," which posits that identity emerges through interactional processes rather than being a fixed attribute of individuals. This perspective challenges essentialist views of identity and emphasizes the role of linguistic resources in identity negotiation.</p>
+            
+            <h3>Connection to Conceptual Framework</h3>
+            <p>This work aligns with the discourse analysis component of our conceptual framework, particularly through its emphasis on:</p>
+            <ul>
+                <li>Micro-level analysis of conversational patterns</li>
+                <li>The role of power dynamics in discourse</li>
+                <li>Intersectional approaches to identity formation</li>
+                <li>Contextual factors shaping linguistic choices</li>
+            </ul>
+        </div>
+        
+        <div id="text2" class="content">
+            <h2>Review: Chen & Okafor (2025)</h2>
+            <h3>Language Variation and Social Meaning</h3>
+            <p>Chen and Okafor's (2025) research, "Language Variation and Social Meaning," advances the variationalist sociolinguistic tradition by incorporating contemporary social theory. The authors demonstrate how linguistic variables acquire social meanings through repeated patterns of use in specific communities.</p>
+            
+            <p>Their innovative methodological approach combines quantitative analysis of linguistic features with ethnographic observation, allowing for a more nuanced understanding of how language variation correlates with social factors such as class, gender, and ethnicity.</p>
+            
+            <h3>Connection to Conceptual Framework</h3>
+            <p>This text contributes significantly to the variationalist sociolinguistics component of our framework through:</p>
+            <ul>
+                <li>Empirical investigation of phonological and syntactic variation</li>
+                <li>Examination of style-shifting as social practice</li>
+                <li>Analysis of linguistic markets and symbolic capital</li>
+                <li>Integration of quantitative and qualitative methods</li>
+            </ul>
+        </div>
+        
+        <div id="text3" class="content">
+            <h2>Review: Johnson et al. (2025)</h2>
+            <h3>Language in Society: Macro Perspectives</h3>
+            <p>Johnson et al. (2025) offer a macro-sociological perspective in their work "Language in Society: Macro Perspectives." This comprehensive study examines how language policies, ideologies, and institutions shape linguistic practices at societal levels.</p>
+            
+            <p>The authors develop the concept of "linguistic ecology" to describe the complex interplay between language practices and social structures. Their multi-level analysis connects micro-interactional patterns with macro-social phenomena, providing a bridge between sociolinguistics and political economy.</p>
+            
+            <h3>Connection to Conceptual Framework</h3>
+            <p>This work enriches the sociology of language component of our framework by addressing:</p>
+            <ul>
+                <li>Language policy and planning</li>
+                <li>Institutional discourses</li>
+                <li>Language ideologies</li>
+                <li>Globalization and linguistic diversity</li>
+            </ul>
+        </div>
+        
+        <div id="synthesis" class="content">
+            <h2>Synthesis of Findings</h2>
+            <p>The three reviewed texts collectively demonstrate the breadth and depth of Sociocultural Linguistics as an interdisciplinary field. While each work approaches language and society from a different perspective, several unifying themes emerge across these studies.</p>
+            
+            <h3>Comparative Analysis</h3>
+            <p>Smith & Gumede (2025) focus on micro-level discourse practices, Chen & Okafor (2025) emphasize meso-level patterns of variation, and Johnson et al. (2025) examine macro-level social structures. Despite these different levels of analysis, all three works share a commitment to understanding language as social practice rather than merely a formal system.</p>
+            
+            <h3>Tensions and Gaps</h3>
+            <p>A significant tension across these works concerns the structure-agency debate. While Smith & Gumede emphasize agency in discourse, Johnson et al. highlight structural constraints on linguistic practice. Chen & Okafor attempt to bridge this divide through their mixed-methods approach, though questions remain about how to fully integrate these perspectives.</p>
+            
+            <h3>Future Research Directions</h3>
+            <p>Future research in SCL should:</p>
+            <ul>
+                <li>Develop more integrated methodologies that connect different levels of analysis</li>
+                <li>Explore digital communication practices and their social implications</li>
+                <li>Examine the role of language in processes of social change and resistance</li>
+                <li>Address linguistic diversity and equity in educational and institutional contexts</li>
+            </ul>
+        </div>
+        
+        <div id="references" class="content">
+            <h2>References</h2>
+            
+            <div class="reference">
+                <p>Chen, L., & Okafor, N. (2025). Language Variation and Social Meaning. Journal of Sociolinguistics, 29(3), 345-367.</p>
+            </div>
+            
+            <div class="reference">
+                <p>Johnson, M., Rodríguez, A., & Tanaka, H. (2025). Language in Society: Macro Perspectives. Oxford University Press.</p>
+            </div>
+            
+            <div class="reference">
+                <p>Smith, J., & Gumede, T. (2025). Discourse and Social Identity. Cambridge University Press.</p>
+            </div>
+            
+            <div class="reference">
+                <p>Bucholtz, M., & Hall, K. (2005). Identity and interaction: A sociocultural linguistic approach. Discourse Studies, 7(4-5), 585-614.</p>
+            </div>
+            
+            <div class="reference">
+                <p>Gee, J. P. (2015). Discourse, small d, big D. In The International Encyclopedia of Language and Social Interaction (pp. 1-5). Wiley.</p>
+            </div>
+        </div>
+        
+        <div id="visuals" class="content">
+            <h2>Visual Components</h2>
+            <p>The following images were generated to visually represent key concepts from the literature review:</p>
+            
+            <div class="image-container">
+                <div class="image-card">
+                    <div class="image-placeholder">Generated Image: Discourse and Identity</div>
+                    <div class="prompt-box">
+                        <strong>Prompt:</strong> "Create an abstract representation of how language and discourse shape social identity, showing interconnected networks of communication with diverse people engaged in conversation, using a academic style with blue and gold color scheme"
+                    </div>
+                    <div class="annotation">
+                        <strong>Annotation (English):</strong> This image visually represents the complex interplay between discourse and identity formation, illustrating how linguistic practices create networks of social meaning.
+                    </div>
+                    <div class="annotation">
+                        <strong>Annotation (Spanish):</strong> Esta imagen representa visualmente la interacción compleja entre el discurso y la formación de identidad, ilustrando cómo las prácticas lingüísticas crean redes de significado social.
+                    </div>
+                </div>
+                
+                <div class="image-card">
+                    <div class="image-placeholder">Generated Image: Language Variation</div>
+                    <div class="prompt-box">
+                        <strong>Prompt:</strong> "Visualize the concept of language variation across social contexts, showing how linguistic features change across different communities and settings, using a diagrammatic style with overlapping circles and gradient colors"
+                    </div>
+                    <div class="annotation">
+                        <strong>Annotation (English):</strong> This diagram illustrates the continuum of language variation across social contexts, demonstrating how linguistic features shift along sociological parameters.
+                    </div>
+                    <div class="annotation">
+                        <strong>Annotation (French):</strong> Ce diagramme illustre le continuum de la variation linguistique à travers les contextes sociaux, montrant comment les caractéristiques linguistiques changent le long de paramètres sociologiques.
+                    </div>
+                </div>
+            </div>
+            
+            <p>These visual representations help to conceptualize abstract theoretical frameworks discussed in the literature review, providing alternative ways to engage with complex sociolinguistic concepts.</p>
+        </div>
+        
+        <footer>
+            <p>Academic Assignment Demo | Sociocultural Linguistics Literature Review</p>
+            <p>This is a fictional assignment for demonstration purposes only.</p>
+        </footer>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            // Hide all tab content
+            var tabs = document.getElementsByClassName('content');
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove('active');
+            }
+            
+            // Remove active class from all buttons
+            var buttons = document.getElementsByClassName('tab-btn');
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+            
+            // Show the specific tab content and set button as active
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
