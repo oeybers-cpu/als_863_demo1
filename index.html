@@ -45,6 +45,31 @@
             margin: 0 auto;
         }
         
+        /* Counter styling */
+        #website-counter {
+            text-align: center;
+            margin: 15px 0;
+            padding: 12px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-weight: bold;
+            color: #2c3e50;
+            border: 1px solid #e0e6ed;
+            max-width: 300px;
+            margin: 0 auto 20px;
+            font-size: 1.1rem;
+        }
+        
+        #website-counter span {
+            background-color: #3498db;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 20px;
+            margin-left: 8px;
+            font-weight: normal;
+        }
+        
         .note {
             background-color: #ffeaa7;
             padding: 15px;
@@ -212,6 +237,9 @@
             <p>Examining Key Theoretical Frameworks in Language and Society</p>
         </header>
         
+        <!-- Counter container -->
+        <div id="website-counter">Total visits: <span>0</span></div>
+        
         <div class="note">
             <strong>Demo Note:</strong> This demo uses reduced text for illustration purposes. Students must adhere to the required word limit in actual submissions.
         </div>
@@ -360,6 +388,31 @@
             <p>This is a fictional assignment for demonstration purposes only.</p>
         </footer>
     </div>
+
+    <!-- Counter implementation -->
+    <script>
+        // Initialize counter when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get the counter element
+            const counterElement = document.getElementById('website-counter');
+            const countSpan = counterElement.querySelector('span');
+            
+            // Get current count from localStorage or initialize to 0
+            let visitCount = localStorage.getItem('socioculturalLinguisticsCounter');
+            
+            if (visitCount === null) {
+                visitCount = 1;
+            } else {
+                visitCount = parseInt(visitCount) + 1;
+            }
+            
+            // Save the updated count
+            localStorage.setItem('socioculturalLinguisticsCounter', visitCount);
+            
+            // Update the counter display
+            countSpan.textContent = visitCount;
+        });
+    </script>
 
     <script>
         function openTab(tabName) {
