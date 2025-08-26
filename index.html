@@ -59,18 +59,21 @@
             background-color: #2c3e50;
             border-radius: 6px 6px 0 0;
             overflow: hidden;
+            role: tablist;
         }
         
         .tab-btn {
             background: #34495e;
             border: none;
             color: #ecf0f1;
-            padding: 15px 20px;
+            padding: 15px 10px;
             cursor: pointer;
             flex-grow: 1;
             text-align: center;
             font-weight: 600;
             transition: all 0.3s ease;
+            min-height: 48px;
+            outline: none;
         }
         
         .tab-btn:hover {
@@ -83,16 +86,19 @@
         }
         
         .content {
-            display: none;
+            opacity: 0;
+            visibility: hidden;
             padding: 30px;
             background: white;
             border-radius: 0 0 8px 8px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             min-height: 400px;
+            transition: opacity 0.3s ease;
         }
         
         .content.active {
-            display: block;
+            opacity: 1;
+            visibility: visible;
             animation: fadeIn 0.5s ease;
         }
         
@@ -198,17 +204,17 @@
             <strong>Demo Note:</strong> This demo uses reduced text for illustration purposes. Students must adhere to the required word limit in actual submissions.
         </div>
         
-        <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('intro')">Introduction</button>
-            <button class="tab-btn" onclick="openTab('text1')">Text 1 Review</button>
-            <button class="tab-btn" onclick="openTab('text2')">Text 2 Review</button>
-            <button class="tab-btn" onclick="openTab('text3')">Text 3 Review</button>
-            <button class="tab-btn" onclick="openTab('synthesis')">Synthesis</button>
-            <button class="tab-btn" onclick="openTab('references')">References</button>
-            <button class="tab-btn" onclick="openTab('visuals')">Visual Components</button>
+        <div class="tabs" role="tablist">
+            <button class="tab-btn active" data-tab="intro" role="tab" aria-selected="true" aria-controls="intro">Introduction</button>
+            <button class="tab-btn" data-tab="text1" role="tab" aria-selected="false" aria-controls="text1">Text 1 Review</button>
+            <button class="tab-btn" data-tab="text2" role="tab" aria-selected="false" aria-controls="text2">Text 2 Review</button>
+            <button class="tab-btn" data-tab="text3" role="tab" aria-selected="false" aria-controls="text3">Text 3 Review</button>
+            <button class="tab-btn" data-tab="synthesis" role="tab" aria-selected="false" aria-controls="synthesis">Synthesis</button>
+            <button class="tab-btn" data-tab="references" role="tab" aria-selected="false" aria-controls="references">References</button>
+            <button class="tab-btn" data-tab="visuals" role="tab" aria-selected="false" aria-controls="visuals">Visual Components</button>
         </div>
         
-        <div id="intro" class="content active">
+        <div id="intro" class="content active" role="tabpanel" aria-labelledby="intro">
             <h2>Introduction to Sociocultural Linguistics</h2>
             <p>Sociocultural Linguistics (SCL) represents an interdisciplinary field that examines the intricate relationships between language, culture, and society. This literature review explores three seminal works that have shaped the theoretical foundations of SCL, analyzing their contributions to understanding how language functions as a social practice.</p>
             
@@ -224,7 +230,7 @@
             </ul>
         </div>
         
-        <div id="text1" class="content">
+        <div id="text1" class="content" role="tabpanel" aria-labelledby="text1">
             <h2>Review: Smith & Gumede (2025)</h2>
             <h3>Discourse and Social Identity</h3>
             <p>Smith and Gumede's (2025) groundbreaking work, "Discourse and Social Identity," presents a comprehensive framework for analyzing how language constructs and reflects social identities. The authors argue that identity is not merely expressed through language but is actively constituted in discourse practices.</p>
@@ -241,7 +247,7 @@
             </ul>
         </div>
         
-        <div id="text2" class="content">
+        <div id="text2" class="content" role="tabpanel" aria-labelledby="text2">
             <h2>Review: Chen & Okafor (2025)</h2>
             <h3>Language Variation and Social Meaning</h3>
             <p>Chen and Okafor's (2025) research, "Language Variation and Social Meaning," advances the variationalist sociolinguistic tradition by incorporating contemporary social theory. The authors demonstrate how linguistic variables acquire social meanings through repeated patterns of use in specific communities.</p>
@@ -258,7 +264,7 @@
             </ul>
         </div>
         
-        <div id="text3" class="content">
+        <div id="text3" class="content" role="tabpanel" aria-labelledby="text3">
             <h2>Review: Johnson et al. (2025)</h2>
             <h3>Language in Society: Macro Perspectives</h3>
             <p>Johnson et al. (2025) offer a macro-sociological perspective in their work "Language in Society: Macro Perspectives." This comprehensive study examines how language policies, ideologies, and institutions shape linguistic practices at societal levels.</p>
@@ -275,7 +281,7 @@
             </ul>
         </div>
         
-        <div id="synthesis" class="content">
+        <div id="synthesis" class="content" role="tabpanel" aria-labelledby="synthesis">
             <h2>Synthesis of Findings</h2>
             <p>The three reviewed texts collectively demonstrate the breadth and depth of Sociocultural Linguistics as an interdisciplinary field. While each work approaches language and society from a different perspective, several unifying themes emerge across these studies.</p>
             
@@ -295,7 +301,7 @@
             </ul>
         </div>
         
-        <div id="references" class="content">
+        <div id="references" class="content" role="tabpanel" aria-labelledby="references">
             <h2>References</h2>
             
             <div class="reference">
@@ -319,7 +325,7 @@
             </div>
         </div>
         
-        <div id="visuals" class="content">
+        <div id="visuals" class="content" role="tabpanel" aria-labelledby="visuals">
             <h2>Visual Components</h2>
             <p>The following images were generated to visually represent key concepts from the literature review:</p>
             
@@ -368,16 +374,47 @@
                 tabs[i].classList.remove('active');
             }
             
-            // Remove active class from all buttons
+            // Remove active class from all buttons and update ARIA attributes
             var buttons = document.getElementsByClassName('tab-btn');
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].classList.remove('active');
+                buttons[i].setAttribute('aria-selected', 'false');
             }
             
             // Show the specific tab content and set button as active
             document.getElementById(tabName).classList.add('active');
-            event.currentTarget.classList.add('active');
+            var activeButton = document.querySelector(`[data-tab="${tabName}"]`);
+            activeButton.classList.add('active');
+            activeButton.setAttribute('aria-selected', 'true');
         }
+
+        // Initialize tab functionality with event delegation
+        document.addEventListener('DOMContentLoaded', function() {
+            var tabsContainer = document.querySelector('.tabs');
+            
+            tabsContainer.addEventListener('click', function(e) {
+                var target = e.target;
+                if (target.classList.contains('tab-btn')) {
+                    var tabName = target.getAttribute('data-tab');
+                    openTab(tabName);
+                } else if (target.closest('.tab-btn')) {
+                    var tabBtn = target.closest('.tab-btn');
+                    var tabName = tabBtn.getAttribute('data-tab');
+                    openTab(tabName);
+                }
+            });
+            
+            // Keyboard navigation for accessibility
+            document.querySelectorAll('.tab-btn').forEach(function(button) {
+                button.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        var tabName = this.getAttribute('data-tab');
+                        openTab(tabName);
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
