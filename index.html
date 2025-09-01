@@ -45,31 +45,6 @@
             margin: 0 auto;
         }
         
-        /* Counter styling */
-        #website-counter {
-            text-align: center;
-            margin: 15px 0;
-            padding: 12px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            font-weight: bold;
-            color: #2c3e50;
-            border: 1px solid #e0e6ed;
-            max-width: 300px;
-            margin: 0 auto 20px;
-            font-size: 1.1rem;
-        }
-        
-        #website-counter span {
-            background-color: #3498db;
-            color: white;
-            padding: 3px 10px;
-            border-radius: 20px;
-            margin-left: 8px;
-            font-weight: normal;
-        }
-        
         .note {
             background-color: #ffeaa7;
             padding: 15px;
@@ -184,7 +159,7 @@
         }
         
         .image-placeholder {
-            height: 200px;
+            height: 70px; /* Reduced by ~65% from 200px */
             background: linear-gradient(45deg, #74b9ff, #0984e3);
             border-radius: 6px;
             display: flex;
@@ -192,6 +167,7 @@
             justify-content: center;
             color: white;
             font-weight: bold;
+            font-size: 0.8rem;
             margin-bottom: 15px;
         }
         
@@ -201,6 +177,7 @@
             border-radius: 4px;
             margin: 10px 0;
             font-style: italic;
+            font-size: 0.9rem;
         }
         
         .annotation {
@@ -237,40 +214,43 @@
             <p>Examining Key Theoretical Frameworks in Language and Society</p>
         </header>
         
-        <!-- Counter container -->
-        <div id="website-counter">Total visits: <span>0</span></div>
-        
+        <!-- Removed counter completely -->
+
         <div class="note">
             <strong>Demo Note:</strong> This demo uses reduced text for illustration purposes. Students must adhere to the required word limit in actual submissions.
         </div>
         
         <div class="tabs" role="tablist">
-            <button class="tab-btn active" data-tab="intro" role="tab" aria-selected="true" aria-controls="intro">Introduction</button>
             <a href="https://oeybers-cpu.github.io/demo1_a/" class="tab-link" target="_blank" rel="noopener">Text 1 Review</a>
-            <button class="tab-btn" data-tab="text2" role="tab" aria-selected="false" aria-controls="text2">Text 2 Review</button>
+            <button class="tab-btn active" data-tab="text2" role="tab" aria-selected="true" aria-controls="text2">Text 2 Review</button>
             <button class="tab-btn" data-tab="text3" role="tab" aria-selected="false" aria-controls="text3">Text 3 Review</button>
+            <button class="tab-btn" data-tab="text4" role="tab" aria-selected="false" aria-controls="text4">Text 4 Review</button>
             <button class="tab-btn" data-tab="synthesis" role="tab" aria-selected="false" aria-controls="synthesis">Synthesis</button>
             <button class="tab-btn" data-tab="references" role="tab" aria-selected="false" aria-controls="references">References</button>
             <button class="tab-btn" data-tab="visuals" role="tab" aria-selected="false" aria-controls="visuals">Visual Components</button>
         </div>
         
-        <div id="intro" class="content active" role="tabpanel" aria-labelledby="intro">
-            <h2>Introduction to Sociocultural Linguistics</h2>
-            <p>Sociocultural Linguistics (SCL) represents an interdisciplinary field that examines the intricate relationships between language, culture, and society. This literature review explores three seminal works that have shaped the theoretical foundations of SCL, analyzing their contributions to understanding how language functions as a social practice.</p>
-            
-            <p>The selected texts represent diverse perspectives within SCL, including discourse analysis, variationalist sociolinguistics, and the sociology of language. By critically examining these works, this review aims to demonstrate how SCL has evolved as a field that bridges micro-level linguistic analysis with macro-level social theory.</p>
-            
-            <h3>Objectives</h3>
-            <p>This literature review seeks to:</p>
+        <!-- === NEW: Text 2 Review - James Paul Gee === -->
+        <div id="text2" class="content active" role="tabpanel" aria-labelledby="text2">
+            <h2>Review: Gee (2015)</h2>
+            <h3>Discourse, Small-d, Big-D</h3>
+            <p>James Paul Gee’s (2015) conceptualization of “Discourse” (with a capital “D”) offers a foundational framework for understanding how language functions not merely as a tool for communication, but as a vehicle for enacting and recognizing socially significant identities. According to Gee, “Big D Discourse” refers to integrated ways of being, doing, saying, and valuing that allow individuals to be recognized as particular “kinds of people” within specific social groups or communities.</p>
+
+            <p>Gee distinguishes between “little-d discourse” (language in use) and “Big-D Discourse” (the full performance of identity through language, actions, values, tools, and interactions). For example, to be recognized as a “scientist,” one must not only use technical language (little-d discourse), but also behave, dress, use equipment, and uphold values typical of scientific communities. This holistic view emphasizes that identity is performative and socially ratified—success depends on whether others accept the performance as legitimate.</p>
+
+            <h3>Connection to Sociocultural Linguistics</h3>
+            <p>Gee’s theory is central to sociocultural linguistics because it:</p>
             <ul>
-                <li>Analyze key theoretical contributions to Sociocultural Linguistics</li>
-                <li>Identify connections between different methodological approaches</li>
-                <li>Highlight gaps in current research and suggest future directions</li>
-                <li>Demonstrate the interdisciplinary nature of SCL</li>
+                <li>Shows how language is inseparable from social practice and identity construction</li>
+                <li>Highlights the role of context, history, and cultural norms in interpreting meaning</li>
+                <li>Explains how individuals navigate multiple Discourses (e.g., student, gamer, churchgoer) across different settings</li>
+                <li>Introduces the concepts of primary and secondary Discourses, showing how early socialization shapes later participation in institutional and public spheres</li>
             </ul>
+            <p>This framework helps students understand that language use is never neutral—it always positions speakers within social hierarchies, ideologies, and power structures. By analyzing which Discourses are privileged or marginalized in classrooms, workplaces, or media, we gain insight into broader sociocultural dynamics.</p>
         </div>
-        
-        <div id="text2" class="content" role="tabpanel" aria-labelledby="text2">
+
+        <!-- === Existing Text 2 → Now Text 3 Review === -->
+        <div id="text3" class="content" role="tabpanel" aria-labelledby="text3">
             <h2>Review: Chen & Okafor (2025)</h2>
             <h3>Language Variation and Social Meaning</h3>
             <p>Chen and Okafor's (2025) research, "Language Variation and Social Meaning," advances the variationalist sociolinguistic tradition by incorporating contemporary social theory. The authors demonstrate how linguistic variables acquire social meanings through repeated patterns of use in specific communities.</p>
@@ -287,7 +267,8 @@
             </ul>
         </div>
         
-        <div id="text3" class="content" role="tabpanel" aria-labelledby="text3">
+        <!-- === Existing Text 3 → Now Text 4 Review === -->
+        <div id="text4" class="content" role="tabpanel" aria-labelledby="text4">
             <h2>Review: Johnson et al. (2025)</h2>
             <h3>Language in Society: Macro Perspectives</h3>
             <p>Johnson et al. (2025) offer a macro-sociological perspective in their work "Language in Society: Macro Perspectives." This comprehensive study examines how language policies, ideologies, and institutions shape linguistic practices at societal levels.</p>
@@ -306,13 +287,13 @@
         
         <div id="synthesis" class="content" role="tabpanel" aria-labelledby="synthesis">
             <h2>Synthesis of Findings</h2>
-            <p>The three reviewed texts collectively demonstrate the breadth and depth of Sociocultural Linguistics as an interdisciplinary field. While each work approaches language and society from a different perspective, several unifying themes emerge across these studies.</p>
+            <p>The reviewed texts collectively demonstrate the breadth and depth of Sociocultural Linguistics as an interdisciplinary field. While each work approaches language and society from a different perspective, several unifying themes emerge across these studies.</p>
             
             <h3>Comparative Analysis</h3>
-            <p>Smith & Gumede (2025) focus on micro-level discourse practices, Chen & Okafor (2025) emphasize meso-level patterns of variation, and Johnson et al. (2025) examine macro-level social structures. Despite these different levels of analysis, all three works share a commitment to understanding language as social practice rather than merely a formal system.</p>
+            <p>Gee (2015) focuses on identity performance through integrated Discourses, Chen & Okafor (2025) emphasize meso-level patterns of variation, and Johnson et al. (2025) examine macro-level social structures. Despite differing levels of analysis, all share a commitment to understanding language as social practice rather than merely a formal system.</p>
             
             <h3>Tensions and Gaps</h3>
-            <p>A significant tension across these works concerns the structure-agency debate. While Smith & Gumede emphasize agency in discourse, Johnson et al. highlight structural constraints on linguistic practice. Chen & Okafor attempt to bridge this divide through their mixed-methods approach, though questions remain about how to fully integrate these perspectives.</p>
+            <p>A significant tension concerns the structure-agency debate. While Gee emphasizes agency in identity performance, Johnson et al. highlight structural constraints on linguistic practice. Chen & Okafor attempt to bridge this divide through mixed methods, though questions remain about integrating these perspectives fully.</p>
             
             <h3>Future Research Directions</h3>
             <p>Future research in SCL should:</p>
@@ -336,15 +317,11 @@
             </div>
             
             <div class="reference">
-                <p>Smith, J., & Gumede, T. (2025). Discourse and Social Identity. Cambridge University Press.</p>
+                <p>Gee, J. P. (2015). Discourse, small d, big D. In The International Encyclopedia of Language and Social Interaction (pp. 1-5). Wiley.</p>
             </div>
             
             <div class="reference">
                 <p>Bucholtz, M., & Hall, K. (2005). Identity and interaction: A sociocultural linguistic approach. Discourse Studies, 7(4-5), 585-614.</p>
-            </div>
-            
-            <div class="reference">
-                <p>Gee, J. P. (2015). Discourse, small d, big D. In The International Encyclopedia of Language and Social Interaction (pp. 1-5). Wiley.</p>
             </div>
         </div>
         
@@ -354,28 +331,22 @@
             
             <div class="image-container">
                 <div class="image-card">
-                    <div class="image-placeholder">Generated Image: Discourse and Identity</div>
+                    <div class="image-placeholder">Image: Discourse & Identity</div>
                     <div class="prompt-box">
-                        <strong>Prompt:</strong> "Create an abstract representation of how language and discourse shape social identity, showing interconnected networks of communication with diverse people engaged in conversation, using a academic style with blue and gold color scheme"
+                        <strong>Prompt:</strong> "Create an abstract representation of how language and discourse shape social identity..."
                     </div>
                     <div class="annotation">
-                        <strong>Annotation (English):</strong> This image visually represents the complex interplay between discourse and identity formation, illustrating how linguistic practices create networks of social meaning.
-                    </div>
-                    <div class="annotation">
-                        <strong>Annotation (Spanish):</strong> Esta imagen representa visualmente la interacción compleja entre el discurso y la formación de identidad, ilustrando cómo las prácticas lingüísticas crean redes de significado social.
+                        <strong>Annotation (English):</strong> This image visually represents the complex interplay between discourse and identity formation...
                     </div>
                 </div>
                 
                 <div class="image-card">
-                    <div class="image-placeholder">Generated Image: Language Variation</div>
+                    <div class="image-placeholder">Image: Language Variation</div>
                     <div class="prompt-box">
-                        <strong>Prompt:</strong> "Visualize the concept of language variation across social contexts, showing how linguistic features change across different communities and settings, using a diagrammatic style with overlapping circles and gradient colors"
+                        <strong>Prompt:</strong> "Visualize the concept of language variation across social contexts..."
                     </div>
                     <div class="annotation">
-                        <strong>Annotation (English):</strong> This diagram illustrates the continuum of language variation across social contexts, demonstrating how linguistic features shift along sociological parameters.
-                    </div>
-                    <div class="annotation">
-                        <strong>Annotation (French):</strong> Ce diagramme illustre le continuum de la variation linguistique à travers les contextes sociaux, montrant comment les caractéristiques linguistiques changent le long de paramètres sociologiques.
+                        <strong>Annotation (English):</strong> This diagram illustrates the continuum of language variation...
                     </div>
                 </div>
             </div>
@@ -389,47 +360,21 @@
         </footer>
     </div>
 
-    <!-- Counter implementation -->
-    <script>
-        // Initialize counter when page loads
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the counter element
-            const counterElement = document.getElementById('website-counter');
-            const countSpan = counterElement.querySelector('span');
-            
-            // Get current count from localStorage or initialize to 0
-            let visitCount = localStorage.getItem('socioculturalLinguisticsCounter');
-            
-            if (visitCount === null) {
-                visitCount = 1;
-            } else {
-                visitCount = parseInt(visitCount) + 1;
-            }
-            
-            // Save the updated count
-            localStorage.setItem('socioculturalLinguisticsCounter', visitCount);
-            
-            // Update the counter display
-            countSpan.textContent = visitCount;
-        });
-    </script>
+    <!-- Removed counter script -->
 
     <script>
         function openTab(tabName) {
-            // Hide all tab content
             var tabs = document.getElementsByClassName('content');
             for (var i = 0; i < tabs.length; i++) {
                 tabs[i].classList.remove('active');
             }
             
-            // Remove active class from all buttons and update ARIA attributes
             var buttons = document.querySelectorAll('.tab-btn');
             for (var i = 0; i < buttons.length; i++) {
                 buttons[i].classList.remove('active');
                 buttons[i].setAttribute('aria-selected', 'false');
             }
             
-            // Show the specific tab content and set button as active
             document.getElementById(tabName).classList.add('active');
             var activeButton = document.querySelector(`[data-tab="${tabName}"]`);
             if (activeButton) {
@@ -438,13 +383,11 @@
             }
         }
 
-        // Initialize tab functionality with event delegation
         document.addEventListener('DOMContentLoaded', function() {
             var tabsContainer = document.querySelector('.tabs');
             
             tabsContainer.addEventListener('click', function(e) {
                 var target = e.target;
-                // Skip handling clicks on the Text 1 Review link since it's an external link
                 if (target.classList.contains('tab-link')) {
                     return;
                 }
@@ -459,7 +402,6 @@
                 }
             });
             
-            // Keyboard navigation for accessibility
             document.querySelectorAll('.tab-btn').forEach(function(button) {
                 button.addEventListener('keydown', function(e) {
                     if (e.key === 'Enter' || e.key === ' ') {
