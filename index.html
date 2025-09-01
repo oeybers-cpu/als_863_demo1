@@ -85,6 +85,20 @@
             border-bottom: 3px solid var(--accent-color);
         }
         
+        /* Ask for Help Tab Styles */
+        .ask-for-help-tab {
+            background-color: #ff9800;
+            animation: glow 2s infinite;
+            border-radius: 4px;
+            margin: 0.5rem;
+        }
+        
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px #ff9800; }
+            50% { box-shadow: 0 0 20px #ff9800, 0 0 30px #ff9800; }
+            100% { box-shadow: 0 0 5px #ff9800; }
+        }
+        
         .container {
             max-width: 1200px;
             margin: 2rem auto;
@@ -227,7 +241,7 @@
                 <a href="https://oeybers-cpu.github.io/a_lit_models/" class="nav-link active-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="https://oeybers-cpu.github.io/a_lit_research/" class="nav-link">Research</a>
+                <a href="#" class="nav-link ask-for-help-tab" id="helpButton">Ask for help</a>
             </li>
         </ul>
     </nav>
@@ -283,7 +297,12 @@
             <p>These visual representations help to conceptualize abstract theoretical frameworks discussed in the literature review, providing alternative ways to engage with complex sociolinguistic concepts.</p>
             
             <h2 id="translanguaging">Translanguaging</h2>
-            <p>El **translanguaging** (L1) se refiere a la práctica fluida de utilizar todo el repertorio lingüístico de una persona, como se ilustra en la **Figura 1**, para construir significado y negociar identidades sociales a través de los límites del idioma. This practice extends to the use of one's **L2** (English) in academic and formal settings, where both languages are not treated as separate systems but as a unified, dynamic resource. </p>
+            
+            <h3>L1 Spanish</h3>
+            <p>Translanguaging crosses boundaries and allows students to express their full knowledge.</p>
+            
+            <h3>L2 English</h3>
+            <p>El translanguaging cruza fronteras y permite a los estudiantes expresar todo su conocimiento.</p>
         </main>
         
         <aside class="sidebar">
@@ -304,6 +323,16 @@
     <footer>
         <p>Copyright © 2025 Unit for Academic Literacy | University of Pretoria</p>
     </footer>
+
+    <script>
+        // Function to open email client
+        function sendEmail() {
+            window.location.href = "mailto:oscar.eybers@up.ac.za?subject=Help Request - ALS 863&body=Dear Dr. Eybers,%0D%0A%0D%0AI need assistance with the following:";
+        }
+        
+        // Add event listener to the help button
+        document.getElementById('helpButton').addEventListener('click', sendEmail);
+    </script>
 
 </body>
 </html>
