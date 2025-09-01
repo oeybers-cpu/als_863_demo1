@@ -75,20 +75,7 @@
             outline: none;
         }
         
-        .tab-link {
-            background: #34495e;
-            color: #ecf0f1;
-            padding: 15px 10px;
-            flex-grow: 1;
-            text-align: center;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            min-height: 48px;
-            text-decoration: none;
-            display: block;
-        }
-        
-        .tab-btn:hover, .tab-link:hover {
+        .tab-btn:hover {
             background-color: #4a6491;
         }
         
@@ -159,7 +146,7 @@
         }
         
         .image-placeholder {
-            height: 70px; /* Reduced by ~65% from 200px */
+            height: 70px;
             background: linear-gradient(45deg, #74b9ff, #0984e3);
             border-radius: 6px;
             display: flex;
@@ -214,15 +201,13 @@
             <p>Examining Key Theoretical Frameworks in Language and Society</p>
         </header>
         
-        <!-- Removed counter completely -->
-
         <div class="note">
             <strong>Demo Note:</strong> This demo uses reduced text for illustration purposes. Students must adhere to the required word limit in actual submissions.
         </div>
         
         <div class="tabs" role="tablist">
-            <a href="https://oeybers-cpu.github.io/demo1_a/" class="tab-link" target="_blank" rel="noopener">Text 1 Review</a>
-            <button class="tab-btn active" data-tab="text2" role="tab" aria-selected="true" aria-controls="text2">Text 2 Review</button>
+            <button class="tab-btn active" data-tab="text1" role="tab" aria-selected="true" aria-controls="text1">Text 1 Review</button>
+            <button class="tab-btn" data-tab="text2" role="tab" aria-selected="false" aria-controls="text2">Text 2 Review</button>
             <button class="tab-btn" data-tab="text3" role="tab" aria-selected="false" aria-controls="text3">Text 3 Review</button>
             <button class="tab-btn" data-tab="text4" role="tab" aria-selected="false" aria-controls="text4">Text 4 Review</button>
             <button class="tab-btn" data-tab="synthesis" role="tab" aria-selected="false" aria-controls="synthesis">Synthesis</button>
@@ -230,26 +215,45 @@
             <button class="tab-btn" data-tab="visuals" role="tab" aria-selected="false" aria-controls="visuals">Visual Components</button>
         </div>
         
-        <!-- === NEW: Text 2 Review - James Paul Gee === -->
-        <div id="text2" class="content active" role="tabpanel" aria-labelledby="text2">
-            <h2>Review: Gee (2015)</h2>
-            <h3>Discourse, Small-d, Big-D</h3>
-            <p>James Paul Gee’s (2015) conceptualization of “Discourse” (with a capital “D”) offers a foundational framework for understanding how language functions not merely as a tool for communication, but as a vehicle for enacting and recognizing socially significant identities. According to Gee, “Big D Discourse” refers to integrated ways of being, doing, saying, and valuing that allow individuals to be recognized as particular “kinds of people” within specific social groups or communities.</p>
+        <!-- === Text 1 Review: Bucholtz & Hall (2005) === -->
+        <div id="text1" class="content active" role="tabpanel" aria-labelledby="text1">
+            <h2>Review: Bucholtz and Hall (2005)</h2>
+            <h3>Identity and Interaction: A Sociocultural Linguistic Approach</h3>
+            <p>Bucholtz and Hall (2005) present a foundational framework for understanding identity as dynamically constructed through linguistic interaction, rather than as a fixed or pre-existing category. They argue that identity is not something individuals simply "have," but something they actively "do" in social contexts through language. This perspective positions sociocultural linguistics as a field that examines how speakers use linguistic resources—such as labels, stances, styles, and implicatures—to negotiate who they are in relation to others.</p>
 
-            <p>Gee distinguishes between “little-d discourse” (language in use) and “Big-D Discourse” (the full performance of identity through language, actions, values, tools, and interactions). For example, to be recognized as a “scientist,” one must not only use technical language (little-d discourse), but also behave, dress, use equipment, and uphold values typical of scientific communities. This holistic view emphasizes that identity is performative and socially ratified—success depends on whether others accept the performance as legitimate.</p>
+            <p>The authors emphasize that identity is emergent and relational, shaped through ongoing interaction and influenced by multiple intersecting social dimensions, including race, gender, class, and institutional roles. They highlight three key dimensions of intersubjectivity: similarity/difference, authenticity/artifice, and authority/delegitimization, which speakers navigate moment-by-moment in discourse. As they note, “any given construction of identity may be in part deliberate and intentional, in part habitual and hence often less than fully conscious” (Bucholtz & Hall, 2005, p. 605).</p>
 
             <h3>Connection to Sociocultural Linguistics</h3>
-            <p>Gee’s theory is central to sociocultural linguistics because it:</p>
+            <p>This text is central to sociocultural linguistics because it:</p>
             <ul>
-                <li>Shows how language is inseparable from social practice and identity construction</li>
-                <li>Highlights the role of context, history, and cultural norms in interpreting meaning</li>
-                <li>Explains how individuals navigate multiple Discourses (e.g., student, gamer, churchgoer) across different settings</li>
-                <li>Introduces the concepts of primary and secondary Discourses, showing how early socialization shapes later participation in institutional and public spheres</li>
+                <li>Shifts focus from static identity categories to dynamic identity practices in interaction</li>
+                <li>Integrates micro-level discourse analysis with macro-level sociocultural ideologies</li>
+                <li>Highlights how power and social positioning are enacted through everyday talk</li>
+                <li>Provides a methodological toolkit for analyzing identity across multiple levels of social life</li>
             </ul>
-            <p>This framework helps students understand that language use is never neutral—it always positions speakers within social hierarchies, ideologies, and power structures. By analyzing which Discourses are privileged or marginalized in classrooms, workplaces, or media, we gain insight into broader sociocultural dynamics.</p>
+            <p>By showing how identity is co-constructed in real time, Bucholtz and Hall offer a powerful lens for understanding how language reflects and reproduces social structures, making their work essential for students of language, culture, and society.</p>
         </div>
 
-        <!-- === Existing Text 2 → Now Text 3 Review === -->
+        <!-- === Text 2 Review: Gee (2015) === -->
+        <div id="text2" class="content" role="tabpanel" aria-labelledby="text2">
+            <h2>Review: Gee (2015)</h2>
+            <h3>Discourse, Small-d, Big-D: Performing Social Identities</h3>
+            <p>Gee (2015) introduces the influential distinction between “discourse” (with a lowercase “d”) and “Discourse” (with a capital “D”) to explain how language functions not just to convey information, but to enact socially recognized identities. According to Gee, “little-d discourse” refers to language in use—spoken or written stretches of communication—while “Big-D Discourse” encompasses the full performance of identity through integrated combinations of language, actions, values, tools, and social practices. To be recognized as a particular “kind of person”—such as a student, gamer, or scientist—one must not only use the right words but also dress, act, interact, and believe in ways that align with the expectations of a given social group.</p>
+
+            <p>Gee argues that being a “member” of a Discourse means successfully “pulling off” a recognizable identity through what he calls a “repertoire” of semiotic resources. For example, a student must not only speak in academic language but also submit assignments, follow classroom norms, and display respect for authority to be recognized as a legitimate participant. These performances are context-sensitive and often contested—what counts as a “good student” in one school may not in another. Furthermore, individuals navigate multiple Discourses throughout their lives, shifting between primary Discourses (acquired in early socialization, such as family) and secondary Discourses (acquired later in institutions like schools or workplaces).</p>
+
+            <h3>Connection to Sociocultural Linguistics</h3>
+            <p>Gee’s framework is pivotal to sociocultural linguistics because it:</p>
+            <ul>
+                <li>Expands the scope of language analysis beyond words to include embodied and material practices</li>
+                <li>Explains how identity is socially ratified, not self-declared</li>
+                <li>Clarifies the relationship between home-based (primary) and institution-based (secondary) ways of being</li>
+                <li>Highlights how power operates through access to valued Discourses in education and society</li>
+            </ul>
+            <p>By showing that language is always embedded in broader social practices, Gee helps students understand how linguistic competence is tied to social inclusion, equity, and cultural legitimacy.</p>
+        </div>
+
+        <!-- === Text 3 Review: Chen & Okafor (2025) === -->
         <div id="text3" class="content" role="tabpanel" aria-labelledby="text3">
             <h2>Review: Chen & Okafor (2025)</h2>
             <h3>Language Variation and Social Meaning</h3>
@@ -267,7 +271,7 @@
             </ul>
         </div>
         
-        <!-- === Existing Text 3 → Now Text 4 Review === -->
+        <!-- === Text 4 Review: Johnson et al. (2025) === -->
         <div id="text4" class="content" role="tabpanel" aria-labelledby="text4">
             <h2>Review: Johnson et al. (2025)</h2>
             <h3>Language in Society: Macro Perspectives</h3>
@@ -290,10 +294,10 @@
             <p>The reviewed texts collectively demonstrate the breadth and depth of Sociocultural Linguistics as an interdisciplinary field. While each work approaches language and society from a different perspective, several unifying themes emerge across these studies.</p>
             
             <h3>Comparative Analysis</h3>
-            <p>Gee (2015) focuses on identity performance through integrated Discourses, Chen & Okafor (2025) emphasize meso-level patterns of variation, and Johnson et al. (2025) examine macro-level social structures. Despite differing levels of analysis, all share a commitment to understanding language as social practice rather than merely a formal system.</p>
+            <p>Bucholtz & Hall (2005) and Gee (2015) both focus on identity as performative and interactionally achieved, though Gee emphasizes institutional and cultural affiliations while Bucholtz and Hall analyze moment-to-moment negotiation. Chen & Okafor (2025) emphasize meso-level patterns of variation, and Johnson et al. (2025) examine macro-level social structures. Despite differing levels of analysis, all share a commitment to understanding language as social practice.</p>
             
             <h3>Tensions and Gaps</h3>
-            <p>A significant tension concerns the structure-agency debate. While Gee emphasizes agency in identity performance, Johnson et al. highlight structural constraints on linguistic practice. Chen & Okafor attempt to bridge this divide through mixed methods, though questions remain about integrating these perspectives fully.</p>
+            <p>A key tension lies in how each theory handles agency versus structure. Bucholtz & Hall and Gee emphasize individual agency in identity construction, while Johnson et al. stress structural constraints. Chen & Okafor attempt to bridge this gap with mixed methods, but further integration is needed.</p>
             
             <h3>Future Research Directions</h3>
             <p>Future research in SCL should:</p>
@@ -309,19 +313,19 @@
             <h2>References</h2>
             
             <div class="reference">
-                <p>Chen, L., & Okafor, N. (2025). Language Variation and Social Meaning. Journal of Sociolinguistics, 29(3), 345-367.</p>
+                <p>Bucholtz, M., & Hall, K. (2005). Identity and interaction: A sociocultural linguistic approach. <em>Discourse Studies</em>, <em>7</em>(4-5), 585–614.</em></p>
             </div>
             
             <div class="reference">
-                <p>Johnson, M., Rodríguez, A., & Tanaka, H. (2025). Language in Society: Macro Perspectives. Oxford University Press.</p>
+                <p>Chen, L., & Okafor, N. (2025). Language variation and social meaning. <em>Journal of Sociolinguistics</em>, <em>29</em>(3), 345–367.</p>
             </div>
             
             <div class="reference">
-                <p>Gee, J. P. (2015). Discourse, small d, big D. In The International Encyclopedia of Language and Social Interaction (pp. 1-5). Wiley.</p>
+                <p>Johnson, M., Rodríguez, A., & Tanaka, H. (2025). <em>Language in society: Macro perspectives</em>. Oxford University Press.</p>
             </div>
             
             <div class="reference">
-                <p>Bucholtz, M., & Hall, K. (2005). Identity and interaction: A sociocultural linguistic approach. Discourse Studies, 7(4-5), 585-614.</p>
+                <p>Gee, J. P. (2015). Discourse, small d, big D. In K. Tracy, C. Ilie, & T. Sandel (Eds.), <em>International encyclopedia of language and social interaction</em> (pp. 1–5). Wiley.</p>
             </div>
         </div>
         
@@ -360,8 +364,6 @@
         </footer>
     </div>
 
-    <!-- Removed counter script -->
-
     <script>
         function openTab(tabName) {
             var tabs = document.getElementsByClassName('content');
@@ -388,10 +390,6 @@
             
             tabsContainer.addEventListener('click', function(e) {
                 var target = e.target;
-                if (target.classList.contains('tab-link')) {
-                    return;
-                }
-                
                 if (target.classList.contains('tab-btn')) {
                     var tabName = target.getAttribute('data-tab');
                     openTab(tabName);
